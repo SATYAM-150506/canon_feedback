@@ -119,3 +119,26 @@ footer {
     position: relative;
     bottom: 0;
 }
+
+.rating-container {
+    display: flex;
+    flex-direction: row-reverse; /* Ensures highest rating appears first */
+    justify-content: center;
+}
+
+.rating-container input {
+    display: none; /* Hide radio buttons */
+}
+
+.rating-container label {
+    font-size: 40px;
+    color: gray; /* Default star color */
+    cursor: pointer;
+    transition: color 0.3s;
+}
+
+.rating-container input:checked ~ label,
+.rating-container label:hover,
+.rating-container label:hover ~ label {
+    color: gold; /* Highlight stars when selected or hovered */
+}

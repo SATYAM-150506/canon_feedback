@@ -1,4 +1,4 @@
-<main class="main"> 
+<main class="main">
     <div class="container">
         <h1>Canon Feedback Form</h1>
 
@@ -8,6 +8,7 @@
             <input type="date" name="date" required>
             <input type="text" name="product_model" placeholder="Product Model" required>
             <textarea name="comments" placeholder="Your Feedback" required></textarea>
+
             <label>
                 Satisfaction Level:
                 <select name="satisfaction" required>
@@ -18,12 +19,32 @@
                     <option value="Very Dissatisfied">Very Dissatisfied</option>
                 </select>
             </label>
+
+            <!-- Corrected Rating System -->
+          <label>Product Rating:</label>
+<div class="rating-container">
+    <input type="radio" name="rating" value="5" id="star5">
+    <label for="star5">★</label>
+
+    <input type="radio" name="rating" value="4" id="star4">
+    <label for="star4">★</label>
+
+    <input type="radio" name="rating" value="3" id="star3">
+    <label for="star3">★</label>
+
+    <input type="radio" name="rating" value="2" id="star2">
+    <label for="star2">★</label>
+
+    <input type="radio" name="rating" value="1" id="star1">
+    <label for="star1">★</label>
+</div>
+
             <button type="submit">Submit Feedback</button>
         </form>
 
         <h2>Feedback Summary</h2>
 
-        <div class="table-container"> 
+        <div class="table-container">
             <table id="feedback-table">
                 <thead>
                     <tr>
@@ -33,6 +54,7 @@
                         <th>Product Model</th>
                         <th>Feedback</th>
                         <th>Satisfaction</th>
+                        <th>Rating</th>
                         <th>Actions</th>
                     </tr>
                 </thead>
@@ -45,6 +67,7 @@
                         <td>{{this.product_model}}</td>
                         <td>{{this.comments}}</td>
                         <td>{{this.satisfaction}}</td>
+                        <td>{{#if this.rating}}{{this.rating}} {{else}}No Rating{{/if}}</td>
                         <td>
                             <a href="/feedback/details/{{this._id}}" class="view-btn">View</a>
                             <form action="/delete_feedback/{{this._id}}" method="POST" style="display:inline;">

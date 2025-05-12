@@ -1,15 +1,17 @@
 <main class="main">
     <div class="container">
         <h1>Feedback Details</h1>
+
         <p><strong>Name:</strong> {{feedback.name}}</p>
         <p><strong>Email:</strong> {{feedback.email}}</p>
         <p><strong>Date:</strong> {{feedback.date}}</p>
         <p><strong>Product Model:</strong> {{feedback.product_model}}</p>
         <p><strong>Comments:</strong> {{feedback.comments}}</p>
         <p><strong>Satisfaction Level:</strong> {{feedback.satisfaction}}</p>
+        <p><strong>Product Rating:</strong> {{feedback.rating}} ★</p> <!-- Displays rating -->
 
-        <button style="background-color: chocolate;"> 
-            <a href="/feedback"> Back to Feedback</a>
+        <button style="background-color: chocolate;">
+            <a href="/feedback">Back to Feedback</a>
         </button>
     </div>
 </main>
